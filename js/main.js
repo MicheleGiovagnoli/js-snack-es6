@@ -16,16 +16,14 @@ const domBici = document.querySelector('.bici');
 bici.forEach(element => {
     const {peso,nome} = element;
     nomeBici=nome;
-    //let m = Math.min(peso);
-    //console.log(m);
     if(peso < biciPiccola){
         biciPiccola = peso;
     }
     
 });
-        const biciPeso = `<span>${nomeBici}</span> </br> <span>dal peso di :${biciPiccola}kg</span>`;
-        domBici.innerHTML = biciPeso;
-       // console.log(peso);
+    const biciPeso = `<span>${nomeBici}</span> </br> <span>dal peso di :${biciPiccola}kg</span>`;
+    domBici.innerHTML = biciPeso;
+       
 
 
 
@@ -43,7 +41,7 @@ bici.forEach(element => {
 
 
 
-/*const squadra = [
+const squadra = [
     {
         nome:'inter',
         punti_fatti: '0',
@@ -58,20 +56,22 @@ bici.forEach(element => {
         falli_subiti:'0'
     }
 ];
-for
+
+let squadraNome = '';
+let squadraPunti_fatti = generateRandomNumber(1,100);;
+let squadraFalli_subiti = generateRandomNumber(1,100);;
+squadra.forEach(element => {
+    const {nome,punti_fatti,falli_subiti} = element;
+    squadraNome = nome;
+    
+});
+
+const domSquadra = document.querySelector('.squadra');
+const newSquadra = `<span>${squadraNome}</span> </br> <span>${squadraPunti_fatti}</span> </br> <span>${squadraFalli_subiti}</span>`;
+    domSquadra.innerHTML = newSquadra;
+
+
 function generateRandomNumber(min, max){
     const randomNumber = Math.floor((Math.random() * (max - min + 1)) + min);
     return randomNumber;
 }
-
-function generateUniqueRandomNumber(array, min, max){
-    let value = false;
-    let uniqueRandomNumber;
-    while( !value ){
-        uniqueRandomNumber = generateRandomNumber(min, max);
-        if(!array.includes(uniqueRandomNumber)){
-            value = true; 
-        }
-    }
-    return uniqueRandomNumber;
-}*/
